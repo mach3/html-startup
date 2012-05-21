@@ -1,0 +1,5 @@
+(function($, undefined){
+
+	// stuffs
+
+}(jQuery));

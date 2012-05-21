@@ -1,0 +1,49 @@
+
+@import "yui-reset";
+
+/**
+ * Fonts
+ */
+
+.en-sans {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.ja-sans {
+	font-family:'メイリオ',Meiryo,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','ＭＳ Ｐゴシック',sans-serif;
+}
+
+/**
+ * Initialize
+ */
+
+body {
+	.ja-sans;
+	font-size:62.5%;
+}
+
+
+/**
+ * Common classes
+ */
+ 
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.clear {
+	*zoom:1;
+	&:after {
+		display:block;
+		content:"";
+		clear:both;
+	}
+}
+
+
+/**
+ * Styles
+ */
+
