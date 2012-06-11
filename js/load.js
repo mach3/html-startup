@@ -8,40 +8,41 @@
 
 (function($, undefined){
 
+	/**
+	 * Path
+	 */
 	window.JSDIR = $("script:last").attr("src").replace(/\?.*?$/,"").replace(/[^\/]*?$/, "");
-	window.JSAPPDIR = JSDIR + "app/";
 	window.IMGDIR = JSDIR + "../img";
 
+	/**
+	 * loader
+	 */
 	var load = function(resources){
+		if(! resources.length){ return; }
 		head.js.call(
 			head,
 			$.map(resources, function(name){
-				return JSAPPDIR + name;
+				return JSDIR + name;
 			})
 		);
 	};
 
 	/**
-	 * load before
+	 * Resources to load imidiately
 	 */
-	(function(){
-		var resources = [
-		];
-		if(resources.length){
-			load(resources);
-		}
-	}());
+	var onhead = [
+	];
 
 	/**
-	 * load on ready
+	 * Resources to load on ready
 	 */
+	var onready = [
+		"app/init.js"
+	];
+
+	load(onhead);
 	$(function(){
-		var resources = [
-			"init.js"
-		];
-		if(resources.length){
-			load(resources);
-		}
+		load(onready);
 	});
 
 }(jQuery));
