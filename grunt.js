@@ -10,7 +10,10 @@ module.exports = function(grunt){
 				"dist/*"
 			],
 			build : [
-				"dist/assets/css/*.less"
+				"dist/assets/less",
+				"dist/assets/js/app",
+				"dist/assets/js/mod",
+				"dist/assets/js/vendor"
 			]
 		},
 
@@ -25,7 +28,7 @@ module.exports = function(grunt){
 		watch : {
 			devel : {
 				files : [
-					"html/assets/css/*.less"
+					"html/assets/less/*.less"
 				],
 				tasks : "less"
 			}
@@ -34,7 +37,7 @@ module.exports = function(grunt){
 		less : {
 			devel : {
 				files : {
-					"html/assets/css/style.css" : "html/assets/css/style.less",
+					"html/assets/css/style.css" : "html/assets/less/style.less",
 					/* and other item */
 				}
 			}
